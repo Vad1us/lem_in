@@ -82,7 +82,6 @@ int ft_links(t_room *rooms, char *s)
 				{
 					if (ft_strequ(r[1], r2->name) == 1)
 					{
-						ft_printf("name %s\n", r2->name);
 						r1->link->r_name = r2;
 						break;
 					}
