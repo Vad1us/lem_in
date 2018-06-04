@@ -1,0 +1,3 @@
+/Users/vradchen/CLionProjects/lemin_C/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/vradchen/CLionProjects/lemin_C/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/vradchen/CLionProjects/lemin_C/cmake-build-debug/CMakeFiles/lemin_C.dir
