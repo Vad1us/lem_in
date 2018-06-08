@@ -12,14 +12,15 @@
 
 #include "lemin.h"
 
-static int	ft_depth2(t_room *st, t_link *l, int i2)//int i, int i2 , t_link *l)
+static int		ft_depth2(t_room *r, t_link *l, int i2)
 {
-	int i;
+	int		i;
+	t_room	*st;
 
+	st = r;
 	i = 0;
 	while (st)
 	{
-
 		if (st->depth == i2)
 		{
 			l = st->link;
@@ -36,72 +37,40 @@ static int	ft_depth2(t_room *st, t_link *l, int i2)//int i, int i2 , t_link *l)
 		st = st->next;
 	}
 	return (i);
-//	if (i != 1)
-//		return ;
 }
 
-void		ft_depth(t_room *st2, t_room *r)
+static t_link	*ft_part2(t_link *l)
 {
-	t_room	*st;
+	while (l)
+	{
+		l->r_n->depth = 1;
+		l = l->next;
+	}
+	return (0);
+}
+
+void			ft_depth(t_room *r)
+{
 	t_room	*r1;
 	t_link	*l;
-	//int		i;
-	int 	i2;
+	int		i2;
 
 	i2 = 0;
-
 	r1 = r;
+	l = r1->link;
 	while (r1)
 	{
 		if (r1->st == 1)
 		{
 			l = r1->link;
-			while (l)
-			{
-				l->r_n->depth = 1;
-				l = l->next;
-			}
+			l = ft_part2(l);
 			break ;
 		}
 		r1 = r1->next;
 	}
-	//r1 = r;
-/*	while (r1)
-//	{
-//		ft_printf("room %s\n", r1->name);
-//		while (r1->link)
-//		{
-//			ft_printf("r %s l %s d %i\n", r1->name, r1->link->r_name->name, r1->depth);
-//			r1->link = r1->link->next;
-//		}
-//		r1 = r1->next;
-	}*/
 	while (1)
 	{
-		st = r;
-		i2++;
-		//i = 0;
-		if (ft_depth2(st, l, i2) != 1)
+		if (ft_depth2(r, l, ++i2) != 1)
 			return ;
-//		while (st)
-//		{
-//
-//			if (st->depth == i2)
-//			{
-//				l = st->link;
-//				while (l)
-//				{
-//					if (l->r_n->depth == 0 && l->r_n->st != 1)
-//						i = 1;
-//					if ((l->r_n->depth > st->depth + 1 || l->r_n->depth == 0) &&
-//						l->r_n->st != 1)
-//						l->r_n->depth = st->depth + 1;
-//					l = l->next;
-//				}
-//			}
-//			st = st->next;
-//		}
-//		if (i != 1)
-//			return ;
 	}
 }

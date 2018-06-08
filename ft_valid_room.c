@@ -10,33 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "lemin.h"
 
-int 	ft_valid_room(char *s)
+static	int	ft_part2(char **r)
 {
 	int		i;
-	int		spaces;
 	int		minus;
 	int		plus;
-	char	**r;
 	int		k;
 
 	k = 1;
-	spaces = 0;
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == ' ')
-			spaces++;
-		i++;
-	}
-	if (spaces != 2)
-		return (0);
-	r = ft_strsplit(s, ' ');
-	if (r[0] == NULL || r[1] == NULL || r[2] == NULL)
-		return (0);
-	while(r[k])
+	while (r[k++])
 	{
 		i = 0;
 		minus = 0;
@@ -53,7 +37,34 @@ int 	ft_valid_room(char *s)
 		}
 		if (minus > 1 || plus > 1 || (minus == 1 && plus == 1))
 			return (0);
-		k++;
 	}
 	return (1);
+}
+
+static	int	ft_spaces(char *s)
+{
+	int		i;
+	int		spaces;
+
+	spaces = 0;
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == ' ')
+			spaces++;
+		i++;
+	}
+	return (spaces);
+}
+
+int			ft_valid_room(char *s)
+{
+	char	**r;
+
+	if (ft_spaces(s) != 2)
+		return (0);
+	r = ft_strsplit(s, ' ');
+	if (r[0] == NULL || r[1] == NULL || r[2] == NULL)
+		return (0);
+	return (ft_part2(r));
 }

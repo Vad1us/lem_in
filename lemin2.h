@@ -13,17 +13,14 @@
 #ifndef LEMIN2_H
 # define LEMIN2_H
 
-# include <stdio.h>
-# include <unistd.h>
-# include "libft/libft.h"
 # include "lemin.h"
 
-typedef struct		s_room t_room;
+typedef struct s_room	t_room;
 
-typedef struct		s_link
+typedef struct			s_link
 {
-	t_room			*r_n;
-	struct s_link	*next;
-}					t_link;
+	t_room				*r_n;
+	struct s_link		*next;
+}						t_link;
 
 #endif

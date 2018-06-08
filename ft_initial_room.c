@@ -12,7 +12,7 @@
 
 #include "lemin.h"
 
-void ft_initial_room(t_room *r)
+void	ft_initial_room(t_room *r)
 {
 	r->st = 0;
 	r->end = 0;
