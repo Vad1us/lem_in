@@ -153,12 +153,112 @@ CMakeFiles/lemin_C.dir/main.c.o.provides: CMakeFiles/lemin_C.dir/main.c.o.requir
 CMakeFiles/lemin_C.dir/main.c.o.provides.build: CMakeFiles/lemin_C.dir/main.c.o
 
 
+CMakeFiles/lemin_C.dir/ft_initial_room.c.o: CMakeFiles/lemin_C.dir/flags.make
+CMakeFiles/lemin_C.dir/ft_initial_room.c.o: ../ft_initial_room.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vradchen/CLionProjects/lemin_C/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/lemin_C.dir/ft_initial_room.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lemin_C.dir/ft_initial_room.c.o   -c /Users/vradchen/CLionProjects/lemin_C/ft_initial_room.c
+
+CMakeFiles/lemin_C.dir/ft_initial_room.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lemin_C.dir/ft_initial_room.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vradchen/CLionProjects/lemin_C/ft_initial_room.c > CMakeFiles/lemin_C.dir/ft_initial_room.c.i
+
+CMakeFiles/lemin_C.dir/ft_initial_room.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lemin_C.dir/ft_initial_room.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vradchen/CLionProjects/lemin_C/ft_initial_room.c -o CMakeFiles/lemin_C.dir/ft_initial_room.c.s
+
+CMakeFiles/lemin_C.dir/ft_initial_room.c.o.requires:
+
+.PHONY : CMakeFiles/lemin_C.dir/ft_initial_room.c.o.requires
+
+CMakeFiles/lemin_C.dir/ft_initial_room.c.o.provides: CMakeFiles/lemin_C.dir/ft_initial_room.c.o.requires
+	$(MAKE) -f CMakeFiles/lemin_C.dir/build.make CMakeFiles/lemin_C.dir/ft_initial_room.c.o.provides.build
+.PHONY : CMakeFiles/lemin_C.dir/ft_initial_room.c.o.provides
+
+CMakeFiles/lemin_C.dir/ft_initial_room.c.o.provides.build: CMakeFiles/lemin_C.dir/ft_initial_room.c.o
+
+
+CMakeFiles/lemin_C.dir/ft_depth.c.o: CMakeFiles/lemin_C.dir/flags.make
+CMakeFiles/lemin_C.dir/ft_depth.c.o: ../ft_depth.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vradchen/CLionProjects/lemin_C/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/lemin_C.dir/ft_depth.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lemin_C.dir/ft_depth.c.o   -c /Users/vradchen/CLionProjects/lemin_C/ft_depth.c
+
+CMakeFiles/lemin_C.dir/ft_depth.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lemin_C.dir/ft_depth.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vradchen/CLionProjects/lemin_C/ft_depth.c > CMakeFiles/lemin_C.dir/ft_depth.c.i
+
+CMakeFiles/lemin_C.dir/ft_depth.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lemin_C.dir/ft_depth.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vradchen/CLionProjects/lemin_C/ft_depth.c -o CMakeFiles/lemin_C.dir/ft_depth.c.s
+
+CMakeFiles/lemin_C.dir/ft_depth.c.o.requires:
+
+.PHONY : CMakeFiles/lemin_C.dir/ft_depth.c.o.requires
+
+CMakeFiles/lemin_C.dir/ft_depth.c.o.provides: CMakeFiles/lemin_C.dir/ft_depth.c.o.requires
+	$(MAKE) -f CMakeFiles/lemin_C.dir/build.make CMakeFiles/lemin_C.dir/ft_depth.c.o.provides.build
+.PHONY : CMakeFiles/lemin_C.dir/ft_depth.c.o.provides
+
+CMakeFiles/lemin_C.dir/ft_depth.c.o.provides.build: CMakeFiles/lemin_C.dir/ft_depth.c.o
+
+
+CMakeFiles/lemin_C.dir/ft_find_path.c.o: CMakeFiles/lemin_C.dir/flags.make
+CMakeFiles/lemin_C.dir/ft_find_path.c.o: ../ft_find_path.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vradchen/CLionProjects/lemin_C/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/lemin_C.dir/ft_find_path.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lemin_C.dir/ft_find_path.c.o   -c /Users/vradchen/CLionProjects/lemin_C/ft_find_path.c
+
+CMakeFiles/lemin_C.dir/ft_find_path.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lemin_C.dir/ft_find_path.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vradchen/CLionProjects/lemin_C/ft_find_path.c > CMakeFiles/lemin_C.dir/ft_find_path.c.i
+
+CMakeFiles/lemin_C.dir/ft_find_path.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lemin_C.dir/ft_find_path.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vradchen/CLionProjects/lemin_C/ft_find_path.c -o CMakeFiles/lemin_C.dir/ft_find_path.c.s
+
+CMakeFiles/lemin_C.dir/ft_find_path.c.o.requires:
+
+.PHONY : CMakeFiles/lemin_C.dir/ft_find_path.c.o.requires
+
+CMakeFiles/lemin_C.dir/ft_find_path.c.o.provides: CMakeFiles/lemin_C.dir/ft_find_path.c.o.requires
+	$(MAKE) -f CMakeFiles/lemin_C.dir/build.make CMakeFiles/lemin_C.dir/ft_find_path.c.o.provides.build
+.PHONY : CMakeFiles/lemin_C.dir/ft_find_path.c.o.provides
+
+CMakeFiles/lemin_C.dir/ft_find_path.c.o.provides.build: CMakeFiles/lemin_C.dir/ft_find_path.c.o
+
+
+CMakeFiles/lemin_C.dir/ft_print_path.c.o: CMakeFiles/lemin_C.dir/flags.make
+CMakeFiles/lemin_C.dir/ft_print_path.c.o: ../ft_print_path.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vradchen/CLionProjects/lemin_C/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/lemin_C.dir/ft_print_path.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lemin_C.dir/ft_print_path.c.o   -c /Users/vradchen/CLionProjects/lemin_C/ft_print_path.c
+
+CMakeFiles/lemin_C.dir/ft_print_path.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lemin_C.dir/ft_print_path.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vradchen/CLionProjects/lemin_C/ft_print_path.c > CMakeFiles/lemin_C.dir/ft_print_path.c.i
+
+CMakeFiles/lemin_C.dir/ft_print_path.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lemin_C.dir/ft_print_path.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vradchen/CLionProjects/lemin_C/ft_print_path.c -o CMakeFiles/lemin_C.dir/ft_print_path.c.s
+
+CMakeFiles/lemin_C.dir/ft_print_path.c.o.requires:
+
+.PHONY : CMakeFiles/lemin_C.dir/ft_print_path.c.o.requires
+
+CMakeFiles/lemin_C.dir/ft_print_path.c.o.provides: CMakeFiles/lemin_C.dir/ft_print_path.c.o.requires
+	$(MAKE) -f CMakeFiles/lemin_C.dir/build.make CMakeFiles/lemin_C.dir/ft_print_path.c.o.provides.build
+.PHONY : CMakeFiles/lemin_C.dir/ft_print_path.c.o.provides
+
+CMakeFiles/lemin_C.dir/ft_print_path.c.o.provides.build: CMakeFiles/lemin_C.dir/ft_print_path.c.o
+
+
 # Object files for target lemin_C
 lemin_C_OBJECTS = \
 "CMakeFiles/lemin_C.dir/ft_valid_room.c.o" \
 "CMakeFiles/lemin_C.dir/ft_links.c.o" \
 "CMakeFiles/lemin_C.dir/ft_myway.c.o" \
-"CMakeFiles/lemin_C.dir/main.c.o"
+"CMakeFiles/lemin_C.dir/main.c.o" \
+"CMakeFiles/lemin_C.dir/ft_initial_room.c.o" \
+"CMakeFiles/lemin_C.dir/ft_depth.c.o" \
+"CMakeFiles/lemin_C.dir/ft_find_path.c.o" \
+"CMakeFiles/lemin_C.dir/ft_print_path.c.o"
 
 # External object files for target lemin_C
 lemin_C_EXTERNAL_OBJECTS =
@@ -167,11 +267,15 @@ lemin_C: CMakeFiles/lemin_C.dir/ft_valid_room.c.o
 lemin_C: CMakeFiles/lemin_C.dir/ft_links.c.o
 lemin_C: CMakeFiles/lemin_C.dir/ft_myway.c.o
 lemin_C: CMakeFiles/lemin_C.dir/main.c.o
+lemin_C: CMakeFiles/lemin_C.dir/ft_initial_room.c.o
+lemin_C: CMakeFiles/lemin_C.dir/ft_depth.c.o
+lemin_C: CMakeFiles/lemin_C.dir/ft_find_path.c.o
+lemin_C: CMakeFiles/lemin_C.dir/ft_print_path.c.o
 lemin_C: CMakeFiles/lemin_C.dir/build.make
 lemin_C: ../libft/libft.a
 lemin_C: ../libft/libftprintf.a
 lemin_C: CMakeFiles/lemin_C.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/vradchen/CLionProjects/lemin_C/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable lemin_C"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/vradchen/CLionProjects/lemin_C/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable lemin_C"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lemin_C.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -183,6 +287,10 @@ CMakeFiles/lemin_C.dir/requires: CMakeFiles/lemin_C.dir/ft_valid_room.c.o.requir
 CMakeFiles/lemin_C.dir/requires: CMakeFiles/lemin_C.dir/ft_links.c.o.requires
 CMakeFiles/lemin_C.dir/requires: CMakeFiles/lemin_C.dir/ft_myway.c.o.requires
 CMakeFiles/lemin_C.dir/requires: CMakeFiles/lemin_C.dir/main.c.o.requires
+CMakeFiles/lemin_C.dir/requires: CMakeFiles/lemin_C.dir/ft_initial_room.c.o.requires
+CMakeFiles/lemin_C.dir/requires: CMakeFiles/lemin_C.dir/ft_depth.c.o.requires
+CMakeFiles/lemin_C.dir/requires: CMakeFiles/lemin_C.dir/ft_find_path.c.o.requires
+CMakeFiles/lemin_C.dir/requires: CMakeFiles/lemin_C.dir/ft_print_path.c.o.requires
 
 .PHONY : CMakeFiles/lemin_C.dir/requires
 

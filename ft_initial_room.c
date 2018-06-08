@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lemin2.h                                           :+:      :+:    :+:   */
+/*   ft_initial_room.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vradchen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/01 15:04:29 by vradchen          #+#    #+#             */
-/*   Updated: 2018/06/01 15:04:31 by vradchen         ###   ########.fr       */
+/*   Created: 2018/06/06 19:12:00 by vradchen          #+#    #+#             */
+/*   Updated: 2018/06/06 19:12:02 by vradchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LEMIN2_H
-# define LEMIN2_H
+#include "lemin.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include "libft/libft.h"
-# include "lemin.h"
-
-typedef struct		s_room t_room;
-
-typedef struct		s_link
+void ft_initial_room(t_room *r)
 {
-	t_room			*r_n;
-	struct s_link	*next;
-}					t_link;
-
-#endif
+	r->st = 0;
+	r->end = 0;
+	r->link = NULL;
+	r->name = NULL;
+	r->next = NULL;
+	r->x = 0;
+	r->y = 0;
+	r->ant = 0;
+	r->depth = 0;
+}

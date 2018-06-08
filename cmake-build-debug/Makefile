@@ -123,6 +123,87 @@ lemin_C/fast:
 	$(MAKE) -f CMakeFiles/lemin_C.dir/build.make CMakeFiles/lemin_C.dir/build
 .PHONY : lemin_C/fast
 
+ft_depth.o: ft_depth.c.o
+
+.PHONY : ft_depth.o
+
+# target to build an object file
+ft_depth.c.o:
+	$(MAKE) -f CMakeFiles/lemin_C.dir/build.make CMakeFiles/lemin_C.dir/ft_depth.c.o
+.PHONY : ft_depth.c.o
+
+ft_depth.i: ft_depth.c.i
+
+.PHONY : ft_depth.i
+
+# target to preprocess a source file
+ft_depth.c.i:
+	$(MAKE) -f CMakeFiles/lemin_C.dir/build.make CMakeFiles/lemin_C.dir/ft_depth.c.i
+.PHONY : ft_depth.c.i
+
+ft_depth.s: ft_depth.c.s
+
+.PHONY : ft_depth.s
+
+# target to generate assembly for a file
+ft_depth.c.s:
+	$(MAKE) -f CMakeFiles/lemin_C.dir/build.make CMakeFiles/lemin_C.dir/ft_depth.c.s
+.PHONY : ft_depth.c.s
+
+ft_find_path.o: ft_find_path.c.o
+
+.PHONY : ft_find_path.o
+
+# target to build an object file
+ft_find_path.c.o:
+	$(MAKE) -f CMakeFiles/lemin_C.dir/build.make CMakeFiles/lemin_C.dir/ft_find_path.c.o
+.PHONY : ft_find_path.c.o
+
+ft_find_path.i: ft_find_path.c.i
+
+.PHONY : ft_find_path.i
+
+# target to preprocess a source file
+ft_find_path.c.i:
+	$(MAKE) -f CMakeFiles/lemin_C.dir/build.make CMakeFiles/lemin_C.dir/ft_find_path.c.i
+.PHONY : ft_find_path.c.i
+
+ft_find_path.s: ft_find_path.c.s
+
+.PHONY : ft_find_path.s
+
+# target to generate assembly for a file
+ft_find_path.c.s:
+	$(MAKE) -f CMakeFiles/lemin_C.dir/build.make CMakeFiles/lemin_C.dir/ft_find_path.c.s
+.PHONY : ft_find_path.c.s
+
+ft_initial_room.o: ft_initial_room.c.o
+
+.PHONY : ft_initial_room.o
+
+# target to build an object file
+ft_initial_room.c.o:
+	$(MAKE) -f CMakeFiles/lemin_C.dir/build.make CMakeFiles/lemin_C.dir/ft_initial_room.c.o
+.PHONY : ft_initial_room.c.o
+
+ft_initial_room.i: ft_initial_room.c.i
+
+.PHONY : ft_initial_room.i
+
+# target to preprocess a source file
+ft_initial_room.c.i:
+	$(MAKE) -f CMakeFiles/lemin_C.dir/build.make CMakeFiles/lemin_C.dir/ft_initial_room.c.i
+.PHONY : ft_initial_room.c.i
+
+ft_initial_room.s: ft_initial_room.c.s
+
+.PHONY : ft_initial_room.s
+
+# target to generate assembly for a file
+ft_initial_room.c.s:
+	$(MAKE) -f CMakeFiles/lemin_C.dir/build.make CMakeFiles/lemin_C.dir/ft_initial_room.c.s
+.PHONY : ft_initial_room.c.s
+
 ft_links.o: ft_links.c.o
 
 .PHONY : ft_links.o
@@ -176,6 +257,33 @@ ft_myway.s: ft_myway.c.s
 ft_myway.c.s:
 	$(MAKE) -f CMakeFiles/lemin_C.dir/build.make CMakeFiles/lemin_C.dir/ft_myway.c.s
 .PHONY : ft_myway.c.s
+
+ft_print_path.o: ft_print_path.c.o
+
+.PHONY : ft_print_path.o
+
+# target to build an object file
+ft_print_path.c.o:
+	$(MAKE) -f CMakeFiles/lemin_C.dir/build.make CMakeFiles/lemin_C.dir/ft_print_path.c.o
+.PHONY : ft_print_path.c.o
+
+ft_print_path.i: ft_print_path.c.i
+
+.PHONY : ft_print_path.i
+
+# target to preprocess a source file
+ft_print_path.c.i:
+	$(MAKE) -f CMakeFiles/lemin_C.dir/build.make CMakeFiles/lemin_C.dir/ft_print_path.c.i
+.PHONY : ft_print_path.c.i
+
+ft_print_path.s: ft_print_path.c.s
+
+.PHONY : ft_print_path.s
+
+# target to generate assembly for a file
+ft_print_path.c.s:
+	$(MAKE) -f CMakeFiles/lemin_C.dir/build.make CMakeFiles/lemin_C.dir/ft_print_path.c.s
+.PHONY : ft_print_path.c.s
 
 ft_valid_room.o: ft_valid_room.c.o
 
@@ -240,12 +348,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... lemin_C"
+	@echo "... ft_depth.o"
+	@echo "... ft_depth.i"
+	@echo "... ft_depth.s"
+	@echo "... ft_find_path.o"
+	@echo "... ft_find_path.i"
+	@echo "... ft_find_path.s"
+	@echo "... ft_initial_room.o"
+	@echo "... ft_initial_room.i"
+	@echo "... ft_initial_room.s"
 	@echo "... ft_links.o"
 	@echo "... ft_links.i"
 	@echo "... ft_links.s"
 	@echo "... ft_myway.o"
 	@echo "... ft_myway.i"
 	@echo "... ft_myway.s"
+	@echo "... ft_print_path.o"
+	@echo "... ft_print_path.i"
+	@echo "... ft_print_path.s"
 	@echo "... ft_valid_room.o"
 	@echo "... ft_valid_room.i"
 	@echo "... ft_valid_room.s"

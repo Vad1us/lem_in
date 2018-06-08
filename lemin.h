@@ -25,15 +25,20 @@ typedef struct		s_room
 	char			*name;
 	int				x;
 	int 			y;
-	int 			start;
+	int 			st;
 	int 			end;
 	struct s_link	*link;
 	struct s_room	*next;
 	int 			ant;
+	int 			depth;
 }					t_room;
 
+void	ft_print_path(t_link *p, int ants);
+int		ft_find_path(t_room *r, int ants);
+void	ft_depth(t_room *st2, t_room *r);
 int		ft_links(t_room *rooms, char *s);
 int		ft_valid_room(char *s);
 void	ft_myway(t_room *r);
+void	ft_initial_room(t_room *r);
 
 #endif

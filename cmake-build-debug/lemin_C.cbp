@@ -82,10 +82,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/vradchen/CLionProjects/lemin_C/ft_depth.c">
+			<Option target="lemin_C"/>
+		</Unit>
+		<Unit filename="/Users/vradchen/CLionProjects/lemin_C/ft_find_path.c">
+			<Option target="lemin_C"/>
+		</Unit>
+		<Unit filename="/Users/vradchen/CLionProjects/lemin_C/ft_initial_room.c">
+			<Option target="lemin_C"/>
+		</Unit>
 		<Unit filename="/Users/vradchen/CLionProjects/lemin_C/ft_links.c">
 			<Option target="lemin_C"/>
 		</Unit>
 		<Unit filename="/Users/vradchen/CLionProjects/lemin_C/ft_myway.c">
+			<Option target="lemin_C"/>
+		</Unit>
+		<Unit filename="/Users/vradchen/CLionProjects/lemin_C/ft_print_path.c">
 			<Option target="lemin_C"/>
 		</Unit>
 		<Unit filename="/Users/vradchen/CLionProjects/lemin_C/ft_valid_room.c">

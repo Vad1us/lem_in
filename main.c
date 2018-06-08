@@ -1,16 +1,16 @@
-#include "lemin.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vradchen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/06/06 20:34:32 by vradchen          #+#    #+#             */
+/*   Updated: 2018/06/06 20:34:34 by vradchen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static void ft_initial(t_room *r)
-{
-	r->start = 0;
-	r->end = 0;
-	r->link = NULL;
-	r->name = NULL;
-	r->next = NULL;
-	r->x = 0;
-	r->y = 0;
-	r->ant = 0;
-}
+#include "lemin.h"
 
 int		main(void)
 {
@@ -18,6 +18,7 @@ int		main(void)
 	char	**r;
 	t_room	*room;
 	t_room	*rooms;
+	t_room	*r1;
 	int		start;
 	int		end;
 	int 	ants;
@@ -27,19 +28,15 @@ int		main(void)
 	ants = 0;
 	start = 0;
 	end = 0;
-	rooms = NULL;//(t_room*)malloc(sizeof(t_room));
-	//ft_initial(rooms);
+	rooms = NULL;
 	get_next_line(0, &s);
 	while (ants == 0)
 	{
+		ft_printf("%s\n", s);
 		while (s[i]  && ants == 0)
 		{
-			//ft_printf("1111");
 			if (ft_isdigit(s[i]) && s[i + 1] == '\0')
-			{
 				ants = ft_atoi(s);
-				ft_printf("ants %i\n", ants);
-			}
 			i++;
 		}
 		if (ants != 0)
@@ -48,40 +45,56 @@ int		main(void)
 			get_next_line(0, &s);
 		else
 		{
-			ft_printf("ERROR: wrong ants");
+			ft_printf("ERROR: wrong ants\n");
 			return (0);
 		}
 	}
 	while (get_next_line(0, &s))
 	{
-		room = (t_room*)malloc(sizeof(t_room));
-		ft_initial(room);
+		ft_printf("%s\n", s);
 		while (ft_strequ(s, "##start") == 0 && ft_strequ(s, "##end") == 0 && ft_strncmp(s, "#", 1) == 0)
+		{
 			get_next_line(0, &s);
+			ft_printf("%s\n", s);
+		}
+		room = malloc(sizeof(t_room));
+		ft_initial_room(room);
 		if (ft_strequ(s, "##start"))
 		{
-			room->start = 1;
+			room->st = 1;
 			start++;
 			get_next_line(0, &s);
+			ft_printf("%s\n", s);
 		}
 		else if (ft_strequ(s, "##end"))
 		{
 			room->end = 1;
 			end++;
 			get_next_line(0, &s);
+			ft_printf("%s\n", s);
 		}
 		while (ft_strequ(s, "##start") != 1 && ft_strequ(s, "##end") != 1 && ft_strncmp(s, "#", 1) == 0)
+		{
 			get_next_line(0, &s);
+			ft_printf("%s\n", s);
+		}
 		if (ft_valid_room(s) == 1)
 		{
 			r = ft_strsplit(s, ' ');
 			room->name = r[0];
 			room->x = ft_atoi(r[1]);
 			room->y = ft_atoi(r[2]);
+			room->next = rooms;
+			rooms = room;
 		}
+//		else if (end == 1 && start == 1)
+//		{
+//			ft_printf("ERROR: not a valid room\n");//bad line, no start or no end\n");
+//			return (0);
+//		}
 		else if (end != 1 || start != 1)
 		{
-			ft_printf("ERROR\n");
+			ft_printf("ERROR: not a valid room\n");
 			return (0);
 		}
 		else
@@ -89,21 +102,18 @@ int		main(void)
 			if (ft_links(rooms, s) == 0)
 				break ;
 		}
-		room->next = rooms;
-		rooms = room;
 	}
-	//ft_myway(rooms);
-	//ft_printf("HELLO1\n");
-	while (rooms)
+	r1 = rooms;
+	while (r1)
 	{
-		while (rooms->link)
+		if (r1->st == 1)
 		{
-			//ft_printf("HELLO1\n");
-			ft_printf("r %s\n", rooms->name);
-			//ft_printf("r %s l %s\n", rooms->name, rooms->link->r_name->name);
-			rooms->link = rooms->link->next;
+			ft_depth(r1, rooms);
+			break ;
 		}
-		rooms = rooms->next;
+		r1 = r1->next;
 	}
+	if (ft_find_path(rooms, ants) == 0)
+		return (0);
 	return (0);
 }
