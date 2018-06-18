@@ -32,25 +32,27 @@ static void	ft_print_path2(t_link *p, int ants)
 
 void		ft_print_path(t_link *p, int ants)
 {
-	int		a;
 	t_link	*p1;
+	int		i;
 
-	a = 1;
+	ft_printf("\n");
 	while (1)
 	{
 		p1 = p;
+		i = 0;
 		while (p1)
 		{
-			if (p1->r_n->ant > 0 && p1->r_n->ant <= ants)
+			if (p1->r_n->ant > 0 && p1->r_n->ant <= ants && p1->r_n->st != 1)
 			{
+				i = 1;
 				ft_printf("L%i-%s ", p1->r_n->ant, p1->r_n->name);
 			}
 			if (p1->r_n->end == 1 && p1->r_n->ant == ants + 1)
 				return ;
 			p1 = p1->next;
 		}
+		if (i == 1)
+			ft_printf("\n");
 		ft_print_path2(p, ants);
-		a++;
-		ft_printf("\n");
 	}
 }

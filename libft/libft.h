@@ -20,7 +20,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# include "printf.h"
+# include "./printf/printf.h"
 
 typedef	struct		s_list
 {
@@ -34,7 +34,7 @@ size_t				ft_strlen(const char *s);
 void				ft_swap(size_t *a, size_t *b);
 size_t				ft_recursive_factorial(size_t nb);
 size_t				ft_sqrt(size_t nb);
-int					ft_atoi(const char *str);
+long long			ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);

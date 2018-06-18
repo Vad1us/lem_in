@@ -12,59 +12,73 @@
 
 #include "lemin.h"
 
-static	int	ft_part2(char **r)
+static	int	ft_part2(char **r2)
 {
 	int		i;
-	int		minus;
-	int		plus;
+	int		znak;
+	int		digit;
 	int		k;
 
-	k = 1;
-	while (r[k++])
+	k = 0;
+	while (r2[++k])
 	{
-		i = 0;
-		minus = 0;
-		plus = 0;
-		while (r[1][i])
+		digit = 0;
+		i = -1;
+		znak = 0;
+		while (r2[k][++i])
 		{
-			if (r[1][i] == '+')
-				plus++;
-			else if (r[1][i] == '-')
-				minus++;
-			else if (ft_isdigit(r[1][i]) != 1)
+			if (r2[k][i] == '+' || r2[k][i] == '-')
+				znak++;
+			else if (ft_isdigit(r2[k][i]) != 1)
 				return (0);
-			i++;
+			else if (ft_isdigit(r2[k][i]) == 1)
+				digit++;
 		}
-		if (minus > 1 || plus > 1 || (minus == 1 && plus == 1))
+		if (znak > 1 || digit == 0)
 			return (0);
 	}
 	return (1);
 }
 
-static	int	ft_spaces(char *s)
+static	int	ft_spaces(char **r2)
 {
 	int		i;
 	int		spaces;
+	int		k;
 
+	k = 0;
 	spaces = 0;
 	i = 0;
-	while (s[i])
+	while (r2[i])
 	{
-		if (s[i] == ' ')
-			spaces++;
+		while (r2[i][k])
+		{
+			if (r2[i][k] == ' ')
+				spaces++;
+			k++;
+		}
 		i++;
 	}
 	return (spaces);
 }
 
-int			ft_valid_room(char *s)
+int			ft_valid_room(char **r2, t_room *rooms)
 {
-	char	**r;
+	int		flag;
+	t_room	*r;
 
-	if (ft_spaces(s) != 2)
+	if (r2[0] == NULL || r2[1] == NULL || r2[2] == NULL || r2[3] != NULL)
 		return (0);
-	r = ft_strsplit(s, ' ');
-	if (r[0] == NULL || r[1] == NULL || r[2] == NULL)
+	if (ft_spaces(r2) != 0)
 		return (0);
-	return (ft_part2(r));
+	r = rooms;
+	while (r)
+	{
+		if ((ft_strequ(r->name, r2[0]) == 1) || (r->x == ft_atoi(r2[1])
+			&& r->y == ft_atoi(r2[2])))
+			return (0);
+		r = r->next;
+	}
+	flag = ft_part2(r2);
+	return (flag);
 }

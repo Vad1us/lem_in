@@ -17,8 +17,7 @@ static void	ft_shortcut(char **s)
 	while (ft_strequ(*s, "##start") == 0 && ft_strequ(*s, "##end") == 0 &&
 		ft_strncmp(*s, "#", 1) == 0)
 	{
-		get_next_line(0, s);
-		ft_printf("%s\n", *s);
+		ft_gnl(s);
 	}
 }
 
@@ -44,50 +43,74 @@ static int	ft_check(t_room *rooms)
 	return (0);
 }
 
-static int	ft_data2(char **s, t_room **rooms, t_room *room)
+static	int	ft_spaces(char *s)
 {
-	char **r;
+	int		i;
+	int		spaces;
 
-	if (ft_valid_room(*s) == 1)
+	spaces = 0;
+	i = 0;
+	while (s[i])
 	{
-		r = ft_strsplit(*s, ' ');
-		room->name = r[0];
+		if (s[i] == ' ')
+			spaces++;
+		i++;
+	}
+	return (spaces);
+}
+
+static int	ft_data2(char **s, t_room **rooms, int end, int st)
+{
+	int		flag;
+	t_room	*room;
+	char	**r;
+
+	r = ft_strsplit(*s, ' ');
+	flag = 1;
+	if (ft_spaces(*s) == 2 && ft_valid_room(r, *rooms) == 1)
+	{
+		room = malloc(sizeof(t_room));
+		ft_initial_room(room);
+		room->name = ft_strdup(r[0]);
 		room->x = ft_atoi(r[1]);
 		room->y = ft_atoi(r[2]);
 		room->next = *rooms;
+		room->end = end;
+		room->st = st;
 		*rooms = room;
 	}
 	else if (ft_check(*rooms) == 0)
-	{
-		ft_printf("ERROR: not a valid room\n");
-		return (0);
-	}
-	else
-	{
-		if (ft_links(*rooms, *s) == 0)
-			return (2);
-	}
-	return (1);
+		flag = 0;
+	else if (ft_links(*rooms, *s) == 0)
+		flag = 2;
+	ft_del(r);
+	return (flag);
 }
 
 int			ft_data(char **s, t_room **rooms)
 {
-	t_room *room;
+	int		flag;
+	int		st;
+	int		end;
 
-	room = malloc(sizeof(t_room));
-	ft_initial_room(room);
+	st = 0;
+	end = 0;
 	if (ft_strequ(*s, "##start"))
 	{
-		room->st = 1;
-		get_next_line(0, s);
-		ft_printf("%s\n", *s);
+		st = 1;
+		if (ft_gnl(s) == 0)
+			return
+			(ft_printf("ERROR: no room after ##start, u cant fool me\n"));
 	}
 	else if (ft_strequ(*s, "##end"))
 	{
-		room->end = 1;
-		get_next_line(0, s);
-		ft_printf("%s\n", *s);
+		end = 1;
+		if (ft_gnl(s) == 0)
+			return (ft_printf("ERROR: no room after ##end, u cant fool me\n"));
 	}
 	ft_shortcut(s);
-	return (ft_data2(s, rooms, room));
+	flag = ft_data2(s, rooms, end, st);
+	if (flag == 0)
+		ft_printf("ERROR: not a valid room\n");
+	return (flag);
 }

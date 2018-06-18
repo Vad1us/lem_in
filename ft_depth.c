@@ -55,6 +55,8 @@ void			ft_depth(t_room *r)
 	t_link	*l;
 	int		i2;
 
+	if (r == NULL)
+		exit(ft_printf("Error: there are no rooms\n"));
 	i2 = 0;
 	r1 = r;
 	l = r1->link;

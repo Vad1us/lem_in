@@ -12,41 +12,59 @@
 
 #include "lemin.h"
 
-static void		ft_ants(int *ants, char *s)
+static int		ft_shortcut(char **s)
 {
-	int		i;
-
-	i = 0;
-	while (*ants == 0)
+	if (*s == NULL)
 	{
-		ft_printf("%s\n", s);
-		while (s[i] && *ants == 0)
+		ft_gnl(s);
+		if (*s == NULL)
 		{
-			if (ft_isdigit(s[i]) && s[i + 1] == '\0')
-				*ants = ft_atoi(s);
-			i++;
-		}
-		if (*ants != 0)
-			break ;
-		if (ft_strequ(s, "##start") != 1 && ft_strequ(s, "##end") != 1 &&
-			ft_strncmp(s, "#", 1) == 0)
-			get_next_line(0, &s);
-		else
-		{
-			ft_printf("ERROR: wrong ants\n");
-			return ;
+			ft_printf("Error: Empty file\n");
+			exit(11);
 		}
 	}
-}
-
-static void		ft_shortcut(char **s)
-{
 	while (ft_strequ(*s, "##start") == 0 && ft_strequ(*s, "##end") == 0 &&
 		ft_strncmp(*s, "#", 1) == 0)
 	{
-		get_next_line(0, s);
-		ft_printf("%s\n", *s);
+		if (ft_gnl(s) == 0)
+			return (0);
 	}
+	return (1);
+}
+
+static int		ft_ants(char *s)
+{
+	int		i;
+	int		ants;
+
+	ants = 0;
+	i = -1;
+	while (ants == 0)
+	{
+		while (s[++i] && ants == 0)
+		{
+			if (ft_isdigit(s[i]) && s[i + 1] == '\0')
+			{
+				if (ft_atoi(s) > 2147483647 || ft_atoi(s) <= 0)
+					return (-1);
+				ants = ft_atoi(s);
+			}
+		}
+		if (ants != 0)
+			break ;
+		if (ft_strequ(s, "##start") != 1 && ft_strequ(s, "##end") != 1 &&
+			ft_strncmp(s, "#", 1) == 0)
+			ft_gnl(&s);
+		else
+			return (-1);
+	}
+	return (ants);
+}
+
+static int		ft_return(void)
+{
+	ft_printf("ERROR: wrong ants\n");
+	return (-1);
 }
 
 int				main(void)
@@ -55,22 +73,25 @@ int				main(void)
 	t_room	*rooms;
 	int		flag;
 	int		ants;
+	t_link	*p;
 
-	ants = 0;
 	rooms = NULL;
-	get_next_line(0, &s);
-	ft_ants(&ants, s);
-	while (get_next_line(0, &s))
+	s = NULL;
+	ft_shortcut(&s);
+	ants = ft_ants(s);
+	if (ants < 0)
+		return (ft_return());
+	while (ft_gnl(&s))
 	{
-		ft_printf("%s\n", s);
-		ft_shortcut(&s);
+		if (ft_shortcut(&s) == 0)
+			break ;
 		flag = ft_data(&s, &rooms);
-		if (flag == 0)
+		if (flag == 0 || flag == 43 || flag == 45)
 			return (0);
 		else if (flag == 2)
 			break ;
 	}
 	ft_depth(rooms);
-	ft_find_path(rooms, ants);
-	return (0);
+	p = ft_find_path(rooms, ants);
+	return (1);
 }

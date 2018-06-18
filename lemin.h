@@ -33,12 +33,14 @@ typedef struct		s_room
 	int				depth;
 }					t_room;
 
+void				ft_del(char **s);
+int					ft_gnl(char **s);
 int					ft_data(char **s, t_room **rooms);
 void				ft_print_path(t_link *p, int ants);
-void				ft_find_path(t_room *r, int ants);
+t_link				*ft_find_path(t_room *r, int ants);
 void				ft_depth(t_room *r);
 int					ft_links(t_room *rooms, char *s);
-int					ft_valid_room(char *s);
+int					ft_valid_room(char **r, t_room *rooms);
 void				ft_initial_room(t_room *r);
 
 #endif

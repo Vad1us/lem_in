@@ -12,7 +12,7 @@
 
 #include "lemin.h"
 
-static void	ft_part2(t_room *r1, int ants, t_link **h_path)
+static void		ft_part2(t_room *r1, int ants, t_link **h_path)
 {
 	t_link	*l;
 	int		depth;
@@ -41,28 +41,44 @@ static void	ft_part2(t_room *r1, int ants, t_link **h_path)
 	ft_print_path(*h_path, ants);
 }
 
-void		ft_find_path(t_room *r, int ants)
+static t_link	*ft_depth_1(t_room *r1, int ants, t_link *h_path)
+{
+	int		i;
+
+	i = 1;
+	while (ants >= i)
+	{
+		ft_printf("L%i-%s ", i, r1->name);
+		i++;
+	}
+	ft_printf("\n");
+	return (h_path);
+}
+
+t_link			*ft_find_path(t_room *r, int ants)
 {
 	t_room	*r1;
 	t_link	*h_path;
 
+	h_path = malloc(sizeof(t_link));
+	h_path->next = NULL;
 	r1 = r;
 	while (r1)
 	{
 		if (r1->end == 1)
 		{
+			if (r1->depth == 1)
+				return (ft_depth_1(r1, ants, h_path));
 			if (r1->depth == 0)
 			{
-				ft_printf("Error: No link to the end\n");
-				return ;
+				ft_printf("Error: start and end are not connected\n");
+				return (h_path);
 			}
 			break ;
 		}
 		r1 = r1->next;
 	}
-	h_path = malloc(sizeof(t_link));
-	h_path->next = NULL;
 	h_path->r_n = r1;
 	ft_part2(r1, ants, &h_path);
-	return ;
+	return (h_path);
 }

@@ -18,7 +18,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <limits.h>
-# include "libft.h"
+# include "../libft.h"
 
 typedef struct	s_style
 {
